@@ -13,13 +13,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ✅ Install Miniconda 
       - name: Set up Miniconda
         uses: conda-incubator/setup-miniconda@v3
         with:
           auto-update-conda: true
           python-version: "3.10"
-          activate-environment: base
+          auto-activate-base: true
 
       - name: Install MLflow (system)
         shell: bash -l {0}
@@ -41,7 +40,6 @@ jobs:
           echo "MLFLOW_TRACKING_USERNAME=$MLFLOW_TRACKING_USERNAME"
           conda --version
 
-      # conda env dari conda.yaml dan jalanin modelling.py
       - name: Run MLflow Project (Retrain)
         shell: bash -l {0}
         run: |
