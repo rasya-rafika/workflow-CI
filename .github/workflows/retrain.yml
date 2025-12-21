@@ -13,28 +13,36 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      # ✅ Install Miniconda 
+      - name: Set up Miniconda
+        uses: conda-incubator/setup-miniconda@v3
         with:
+          auto-update-conda: true
           python-version: "3.10"
+          activate-environment: base
 
-      - name: Install dependencies
+      - name: Install MLflow (system)
+        shell: bash -l {0}
         run: |
           python -m pip install --upgrade pip
-          pip install mlflow pandas numpy scikit-learn matplotlib joblib dagshub
+          pip install mlflow dagshub
 
-      - name: Debug MLflow env (safe)
-        env:
-          MLFLOW_TRACKING_URI: https://dagshub.com/${{ secrets.DAGSHUB_USER }}/${{ secrets.DAGSHUB_REPO }}.mlflow
-          MLFLOW_TRACKING_USERNAME: ${{ secrets.DAGSHUB_USER }}
+      - name: Set MLflow tracking env (Dagshub)
+        shell: bash -l {0}
+        run: |
+          echo "MLFLOW_TRACKING_URI=https://dagshub.com/${{ secrets.DAGSHUB_USER }}/${{ secrets.DAGSHUB_REPO }}.mlflow" >> $GITHUB_ENV
+          echo "MLFLOW_TRACKING_USERNAME=${{ secrets.DAGSHUB_USER }}" >> $GITHUB_ENV
+          echo "MLFLOW_TRACKING_PASSWORD=${{ secrets.DAGSHUB_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Debug (safe)
+        shell: bash -l {0}
         run: |
           echo "MLFLOW_TRACKING_URI=$MLFLOW_TRACKING_URI"
           echo "MLFLOW_TRACKING_USERNAME=$MLFLOW_TRACKING_USERNAME"
+          conda --version
 
+      # conda env dari conda.yaml dan jalanin modelling.py
       - name: Run MLflow Project (Retrain)
-        env:
-          MLFLOW_TRACKING_URI: https://dagshub.com/${{ secrets.DAGSHUB_USER }}/${{ secrets.DAGSHUB_REPO }}.mlflow
-          MLFLOW_TRACKING_USERNAME: ${{ secrets.DAGSHUB_USER }}
-          MLFLOW_TRACKING_PASSWORD: ${{ secrets.DAGSHUB_TOKEN }}
+        shell: bash -l {0}
         run: |
           mlflow run MLProject -P data_path=adult_preprocessing.csv -P target_col=income
