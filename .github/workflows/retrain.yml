@@ -10,34 +10,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mlflow==2.19.0 pandas numpy scikit-learn matplotlib joblib dagshub
+          pip install mlflow pandas numpy scikit-learn matplotlib joblib dagshub
 
-      - name: Configure MLflow Tracking to DagsHub
+      - name: Debug MLflow env (safe)
         env:
-          DAGSHUB_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
-          DAGSHUB_USER: ${{ secrets.DAGSHUB_USER }}
-          DAGSHUB_REPO: ${{ secrets.DAGSHUB_REPO }}
+          MLFLOW_TRACKING_URI: https://dagshub.com/${{ secrets.DAGSHUB_USER }}/${{ secrets.DAGSHUB_REPO }}.mlflow
+          MLFLOW_TRACKING_USERNAME: ${{ secrets.DAGSHUB_USER }}
         run: |
-          echo "Setting MLflow tracking URI to DagsHub..."
-          echo "MLFLOW_TRACKING_URI=https://dagshub.com/${DAGSHUB_USER}/${DAGSHUB_REPO}.mlflow" >> $GITHUB_ENV
-          echo "MLFLOW_TRACKING_USERNAME=${DAGSHUB_USER}" >> $GITHUB_ENV
-          echo "MLFLOW_TRACKING_PASSWORD=${DAGSHUB_TOKEN}" >> $GITHUB_ENV
+          echo "MLFLOW_TRACKING_URI=$MLFLOW_TRACKING_URI"
+          echo "MLFLOW_TRACKING_USERNAME=$MLFLOW_TRACKING_USERNAME"
 
       - name: Run MLflow Project (Retrain)
         env:
-          MLFLOW_TRACKING_URI: ${{ env.MLFLOW_TRACKING_URI }}
-          MLFLOW_TRACKING_USERNAME: ${{ env.MLFLOW_TRACKING_USERNAME }}
-          MLFLOW_TRACKING_PASSWORD: ${{ env.MLFLOW_TRACKING_PASSWORD }}
+          MLFLOW_TRACKING_URI: https://dagshub.com/${{ secrets.DAGSHUB_USER }}/${{ secrets.DAGSHUB_REPO }}.mlflow
+          MLFLOW_TRACKING_USERNAME: ${{ secrets.DAGSHUB_USER }}
+          MLFLOW_TRACKING_PASSWORD: ${{ secrets.DAGSHUB_TOKEN }}
         run: |
-          mlflow run ./MLProject -P data_path=../adult_preprocessing.csv -P target_col=income
+          mlflow run MLProject -P data_path=adult_preprocessing.csv -P target_col=income
