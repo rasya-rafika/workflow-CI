@@ -1,8 +1,10 @@
-name: adult-income-ci
+name: adult-income-mlflow-project
+
+conda_env: conda.yaml
 
 entry_points:
   main:
     parameters:
-      data_path: {type: str, default: "../adult_preprocessing.csv"}
-      target_col: {type: str, default: "income"}
+      data_path: {type: str, default: ../adult_preprocessing.csv}
+      target_col: {type: str, default: income}
     command: "python modelling.py --data_path {data_path} --target_col {target_col}"

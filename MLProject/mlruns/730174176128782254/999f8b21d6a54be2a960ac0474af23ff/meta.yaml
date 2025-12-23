@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RASYA/Downloads/SMSML_Rasya%20Rafika%20Widalala/workflow-CI/MLProject/mlruns/730174176128782254/999f8b21d6a54be2a960ac0474af23ff/artifacts
+end_time: 1766494817046
+entry_point_name: ''
+experiment_id: '730174176128782254'
+lifecycle_stage: active
+run_id: 999f8b21d6a54be2a960ac0474af23ff
+run_name: ci-retrain
+run_uuid: 999f8b21d6a54be2a960ac0474af23ff
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766494731974
+status: 4
+tags: []
+user_id: RASYA
