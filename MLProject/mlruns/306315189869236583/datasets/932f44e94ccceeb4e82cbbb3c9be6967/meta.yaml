@@ -1,0 +1,95 @@
+digest: d18ab261
+name: dataset
+profile: '{"num_rows": 9769, "num_elements": 1055052}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "age", "required": true},
+  {"type": "double", "name": "fnlwgt", "required": true}, {"type": "double", "name":
+  "educational-num", "required": true}, {"type": "double", "name": "capital-gain",
+  "required": true}, {"type": "double", "name": "capital-loss", "required": true},
+  {"type": "double", "name": "hours-per-week", "required": true}, {"type": "double",
+  "name": "workclass_?", "required": true}, {"type": "double", "name": "workclass_Federal-gov",
+  "required": true}, {"type": "double", "name": "workclass_Local-gov", "required":
+  true}, {"type": "double", "name": "workclass_Never-worked", "required": true}, {"type":
+  "double", "name": "workclass_Private", "required": true}, {"type": "double", "name":
+  "workclass_Self-emp-inc", "required": true}, {"type": "double", "name": "workclass_Self-emp-not-inc",
+  "required": true}, {"type": "double", "name": "workclass_State-gov", "required":
+  true}, {"type": "double", "name": "workclass_Without-pay", "required": true}, {"type":
+  "double", "name": "education_10th", "required": true}, {"type": "double", "name":
+  "education_11th", "required": true}, {"type": "double", "name": "education_12th",
+  "required": true}, {"type": "double", "name": "education_1st-4th", "required": true},
+  {"type": "double", "name": "education_5th-6th", "required": true}, {"type": "double",
+  "name": "education_7th-8th", "required": true}, {"type": "double", "name": "education_9th",
+  "required": true}, {"type": "double", "name": "education_Assoc-acdm", "required":
+  true}, {"type": "double", "name": "education_Assoc-voc", "required": true}, {"type":
+  "double", "name": "education_Bachelors", "required": true}, {"type": "double", "name":
+  "education_Doctorate", "required": true}, {"type": "double", "name": "education_HS-grad",
+  "required": true}, {"type": "double", "name": "education_Masters", "required": true},
+  {"type": "double", "name": "education_Preschool", "required": true}, {"type": "double",
+  "name": "education_Prof-school", "required": true}, {"type": "double", "name": "education_Some-college",
+  "required": true}, {"type": "double", "name": "marital-status_Divorced", "required":
+  true}, {"type": "double", "name": "marital-status_Married-AF-spouse", "required":
+  true}, {"type": "double", "name": "marital-status_Married-civ-spouse", "required":
+  true}, {"type": "double", "name": "marital-status_Married-spouse-absent", "required":
+  true}, {"type": "double", "name": "marital-status_Never-married", "required": true},
+  {"type": "double", "name": "marital-status_Separated", "required": true}, {"type":
+  "double", "name": "marital-status_Widowed", "required": true}, {"type": "double",
+  "name": "occupation_?", "required": true}, {"type": "double", "name": "occupation_Adm-clerical",
+  "required": true}, {"type": "double", "name": "occupation_Armed-Forces", "required":
+  true}, {"type": "double", "name": "occupation_Craft-repair", "required": true},
+  {"type": "double", "name": "occupation_Exec-managerial", "required": true}, {"type":
+  "double", "name": "occupation_Farming-fishing", "required": true}, {"type": "double",
+  "name": "occupation_Handlers-cleaners", "required": true}, {"type": "double", "name":
+  "occupation_Machine-op-inspct", "required": true}, {"type": "double", "name": "occupation_Other-service",
+  "required": true}, {"type": "double", "name": "occupation_Priv-house-serv", "required":
+  true}, {"type": "double", "name": "occupation_Prof-specialty", "required": true},
+  {"type": "double", "name": "occupation_Protective-serv", "required": true}, {"type":
+  "double", "name": "occupation_Sales", "required": true}, {"type": "double", "name":
+  "occupation_Tech-support", "required": true}, {"type": "double", "name": "occupation_Transport-moving",
+  "required": true}, {"type": "double", "name": "relationship_Husband", "required":
+  true}, {"type": "double", "name": "relationship_Not-in-family", "required": true},
+  {"type": "double", "name": "relationship_Other-relative", "required": true}, {"type":
+  "double", "name": "relationship_Own-child", "required": true}, {"type": "double",
+  "name": "relationship_Unmarried", "required": true}, {"type": "double", "name":
+  "relationship_Wife", "required": true}, {"type": "double", "name": "race_Amer-Indian-Eskimo",
+  "required": true}, {"type": "double", "name": "race_Asian-Pac-Islander", "required":
+  true}, {"type": "double", "name": "race_Black", "required": true}, {"type": "double",
+  "name": "race_Other", "required": true}, {"type": "double", "name": "race_White",
+  "required": true}, {"type": "double", "name": "gender_Female", "required": true},
+  {"type": "double", "name": "gender_Male", "required": true}, {"type": "double",
+  "name": "native-country_?", "required": true}, {"type": "double", "name": "native-country_Cambodia",
+  "required": true}, {"type": "double", "name": "native-country_Canada", "required":
+  true}, {"type": "double", "name": "native-country_China", "required": true}, {"type":
+  "double", "name": "native-country_Columbia", "required": true}, {"type": "double",
+  "name": "native-country_Cuba", "required": true}, {"type": "double", "name": "native-country_Dominican-Republic",
+  "required": true}, {"type": "double", "name": "native-country_Ecuador", "required":
+  true}, {"type": "double", "name": "native-country_El-Salvador", "required": true},
+  {"type": "double", "name": "native-country_England", "required": true}, {"type":
+  "double", "name": "native-country_France", "required": true}, {"type": "double",
+  "name": "native-country_Germany", "required": true}, {"type": "double", "name":
+  "native-country_Greece", "required": true}, {"type": "double", "name": "native-country_Guatemala",
+  "required": true}, {"type": "double", "name": "native-country_Haiti", "required":
+  true}, {"type": "double", "name": "native-country_Holand-Netherlands", "required":
+  true}, {"type": "double", "name": "native-country_Honduras", "required": true},
+  {"type": "double", "name": "native-country_Hong", "required": true}, {"type": "double",
+  "name": "native-country_Hungary", "required": true}, {"type": "double", "name":
+  "native-country_India", "required": true}, {"type": "double", "name": "native-country_Iran",
+  "required": true}, {"type": "double", "name": "native-country_Ireland", "required":
+  true}, {"type": "double", "name": "native-country_Italy", "required": true}, {"type":
+  "double", "name": "native-country_Jamaica", "required": true}, {"type": "double",
+  "name": "native-country_Japan", "required": true}, {"type": "double", "name": "native-country_Laos",
+  "required": true}, {"type": "double", "name": "native-country_Mexico", "required":
+  true}, {"type": "double", "name": "native-country_Nicaragua", "required": true},
+  {"type": "double", "name": "native-country_Outlying-US(Guam-USVI-etc)", "required":
+  true}, {"type": "double", "name": "native-country_Peru", "required": true}, {"type":
+  "double", "name": "native-country_Philippines", "required": true}, {"type": "double",
+  "name": "native-country_Poland", "required": true}, {"type": "double", "name": "native-country_Portugal",
+  "required": true}, {"type": "double", "name": "native-country_Puerto-Rico", "required":
+  true}, {"type": "double", "name": "native-country_Scotland", "required": true},
+  {"type": "double", "name": "native-country_South", "required": true}, {"type": "double",
+  "name": "native-country_Taiwan", "required": true}, {"type": "double", "name": "native-country_Thailand",
+  "required": true}, {"type": "double", "name": "native-country_Trinadad&Tobago",
+  "required": true}, {"type": "double", "name": "native-country_United-States", "required":
+  true}, {"type": "double", "name": "native-country_Vietnam", "required": true}, {"type":
+  "double", "name": "native-country_Yugoslavia", "required": true}]}'
+source: '{"tags": {"mlflow.user": "RASYA", "mlflow.source.name": "modelling.py", "mlflow.source.type":
+  "LOCAL", "mlflow.source.git.commit": "a7022f858b8fc674659b90634936c17da0e279cf"}}'
+source_type: code
