@@ -39,8 +39,13 @@ jobs:
           echo "MLFLOW_TRACKING_URI=$MLFLOW_TRACKING_URI"
           echo "MLFLOW_TRACKING_USERNAME=$MLFLOW_TRACKING_USERNAME"
           conda --version
+          ls -lah
+          ls -lah MLProject || true
 
       - name: Run MLflow Project (Retrain)
         shell: bash -l {0}
         run: |
-          mlflow run MLProject -P data_path=adult_preprocessing.csv -P target_col=income
+          mlflow run MLProject \
+            --experiment-name "Adult Income Classification" \
+            -P data_path=adult_preprocessing.csv \
+            -P target_col=income
